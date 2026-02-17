@@ -659,6 +659,7 @@ td{{padding:4px 8px;font-size:10px;}}
 #location{{page-break-before:always;}}
 #sale-comps{{page-break-before:always;}}
 #financials{{page-break-before:always;}}
+.os-two-col{{page-break-before:always;align-items:stretch;}}
 .price-reveal{{page-break-before:always;}}
 .footer{{page-break-before:always;}}
 .tr-tagline{{font-size:15px;padding:8px 14px;margin-bottom:8px;}}
@@ -676,9 +677,9 @@ td{{padding:4px 8px;font-size:10px;}}
 .perf-grid{{gap:10px;margin-top:10px;}}.perf-card{{padding:10px 14px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}.perf-card h4{{font-size:12px;margin-bottom:4px;}}.perf-card ul{{margin:0;padding-left:16px;}}.perf-card li{{font-size:10px;line-height:1.4;margin-bottom:2px;}}
 .platform-strip{{padding:6px 12px;margin-top:10px;gap:10px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}.platform-strip-label{{font-size:8px;}}.platform-name{{font-size:9px;}}
 .inv-split{{grid-template-columns:50% 50%;gap:14px;}}.inv-left .metrics-grid-4{{gap:6px;margin-bottom:6px;}}
-.inv-text p{{font-size:10px;line-height:1.4;margin-bottom:4px;}}.inv-logo{{display:none !important;}}
-.inv-right{{padding-top:30px;}}.inv-photo{{height:170px;}}.inv-photo img{{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
-.inv-highlights{{padding:8px 12px;}}.inv-highlights h4{{font-size:10px;margin-bottom:3px;}}.inv-highlights li{{font-size:8.5px;line-height:1.25;margin-bottom:1px;}}
+.inv-text p{{font-size:11px;line-height:1.5;margin-bottom:6px;}}.inv-logo{{display:none !important;}}
+.inv-right{{padding-top:30px;}}.inv-photo{{height:220px;}}.inv-photo img{{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+.inv-highlights{{padding:10px 14px;}}.inv-highlights h4{{font-size:11px;margin-bottom:4px;}}.inv-highlights li{{font-size:10px;line-height:1.4;margin-bottom:2px;}}
 .loc-grid{{display:grid;grid-template-columns:58% 42%;gap:14px;page-break-inside:avoid;}}.loc-left{{max-height:340px;overflow:hidden;}}.loc-left p{{font-size:10.5px;line-height:1.4;margin-bottom:5px;}}.loc-right{{max-height:340px;overflow:hidden;}}
 .loc-wide-map{{height:220px;margin-top:8px;}}.loc-wide-map img{{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 .loc-right .info-table td{{padding:3px 8px;font-size:10px;}}.loc-right .info-table{{margin-bottom:0;}}
