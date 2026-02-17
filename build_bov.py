@@ -399,10 +399,10 @@ rent_map_js = build_map_js("rentMap", rent_comps_for_map, "#1B3A5C", SUBJECT_LAT
 # COMP NARRATIVES
 # ============================================================
 COMP_NARRATIVES = [
-    """<p><strong>101 S Kenmore Ave (8 units, $1,595,000, 07/2025):</strong> The anchor comparable and highest-quality data point in the comp set. This 1925-vintage 8-unit building features all one-bedroom units under RSO with on-site laundry. At $199,375/unit with a 7.29% adjusted cap rate, it establishes the premium end of the market for well-maintained vintage RSO buildings in the 90004 zip code. The strong cap rate reflects reliable income documentation and stabilized operations. The subject at $182,143/unit represents an 8.6% discount to this benchmark, an appropriate adjustment for the smaller building size (7 vs 8 units), mixed unit types, and limited parking. Sold at 94.1% SP/LP, this comp confirms approximately 3&ndash;6% negotiation from list price in the current market.</p>""",
-    """<p><strong>212 S Berendo St (8 units, $1,525,000, 08/2025):</strong> An 8-unit building composed entirely of 2-bedroom units, making it the closest unit-mix match to the subject&rsquo;s 2BR-heavy configuration. Built in 1923 &mdash; the same year as the subject&rsquo;s front building &mdash; this comp traded at $190,625/unit with a deeply compressed 4.15% cap rate. The low cap reflects 108% rent upside embedded in deeply below-market RSO leases, demonstrating that buyers willingly accept lower current yields when the embedded upside is substantial and clearly documented. Purchased by a 1031 exchange buyer, confirming the active exchange market at this price point. The subject offers a more balanced risk-return profile: higher current yield (5.48% cap) with a more moderate 18.5% rent upside. Sold at 90.8% SP/LP after significant negotiation.</p>""",
-    """<p><strong>247 N New Hampshire Ave (12 units, $1,400,000, 08/2025):</strong> An off-market sale of 12 studios with unreliable financial data. At $116,667/unit, this represents the floor of the comp range and reflects the significant discount applied to studio-heavy buildings with limited income transparency. The off-market nature (100% SP/LP) suggests a relationship sale or principal-to-principal transaction. While the per-unit price is dramatically below the subject&rsquo;s $182,143, the comparison is of limited direct relevance due to the fundamentally different unit mix (100% studios vs. subject&rsquo;s 57% 2BR / 29% studio / 14% ADU) and the absence of verifiable income data. This comp serves primarily as a floor reference.</p>""",
-    """<p><strong>143 N Commonwealth Ave (6 units, $1,425,000, 01/2026):</strong> A DISTRESSED sale through auction/trust with an SP/LP ratio of just 79.2%, indicating significant negotiation from the original ask. The 1951 vintage is newer than the subject (1923/1929), and the $237,500/unit price is the highest in the comp set &mdash; but the distressed circumstances and smaller unit count (6 units) make it an outlier. The absence of verifiable cap rate or financial data limits its analytical utility. This comp is used as a ceiling reference for distressed pricing, demonstrating that even under duress, Koreatown multifamily commands $237K+ per unit for post-war product. The subject&rsquo;s non-distressed, fully occupied positioning supports a more favorable marketing outcome.</p>""",
+    """<p><strong>101 S Kenmore Ave (8 units, $1,595,000, 07/2025):</strong> The anchor comparable and highest-quality data point in the comp set. This 1925-vintage 8-unit building features all one-bedroom units under RSO with on-site laundry. At $199,375/unit with a 7.29% adjusted cap rate, it establishes the premium end of the market for well-maintained vintage RSO buildings in the 90004 zip code. The strong cap rate reflects reliable income documentation and stabilized operations. The subject at $182,143/unit represents an 8.6% discount to this benchmark, an appropriate adjustment for the smaller building size (7 vs 8 units), mixed unit types, and limited parking. Sold at 94.1% SP/LP, this comp confirms approximately 3-6% negotiation from list price in the current market.</p>""",
+    """<p><strong>212 S Berendo St (8 units, $1,525,000, 08/2025):</strong> An 8-unit building composed entirely of 2-bedroom units, making it the closest unit-mix match to the subject's 2BR-heavy configuration. Built in 1923  -  the same year as the subject's front building  -  this comp traded at $190,625/unit with a deeply compressed 4.15% cap rate. The low cap reflects 108% rent upside embedded in deeply below-market RSO leases, demonstrating that buyers willingly accept lower current yields when the embedded upside is substantial and clearly documented. Purchased by a 1031 exchange buyer, confirming the active exchange market at this price point. The subject offers a more balanced risk-return profile: higher current yield (5.48% cap) with a more moderate 18.5% rent upside. Sold at 90.8% SP/LP after significant negotiation.</p>""",
+    """<p><strong>247 N New Hampshire Ave (12 units, $1,400,000, 08/2025):</strong> An off-market sale of 12 studios with unreliable financial data. At $116,667/unit, this represents the floor of the comp range and reflects the significant discount applied to studio-heavy buildings with limited income transparency. The off-market nature (100% SP/LP) suggests a relationship sale or principal-to-principal transaction. While the per-unit price is dramatically below the subject's $182,143, the comparison is of limited direct relevance due to the fundamentally different unit mix (100% studios vs. subject's 57% 2BR / 29% studio / 14% ADU) and the absence of verifiable income data. This comp serves primarily as a floor reference.</p>""",
+    """<p><strong>143 N Commonwealth Ave (6 units, $1,425,000, 01/2026):</strong> A DISTRESSED sale through auction/trust with an SP/LP ratio of just 79.2%, indicating significant negotiation from the original ask. The 1951 vintage is newer than the subject (1923/1929), and the $237,500/unit price is the highest in the comp set  -  but the distressed circumstances and smaller unit count (6 units) make it an outlier. The absence of verifiable cap rate or financial data limits its analytical utility. This comp is used as a ceiling reference for distressed pricing, demonstrating that even under duress, Koreatown multifamily commands $237K+ per unit for post-war product. The subject's non-distressed, fully occupied positioning supports a more favorable marketing outcome.</p>""",
 ]
 
 # ============================================================
@@ -610,7 +610,7 @@ td.num,th.num{{text-align:right;}}
 .os-two-col{{display:grid;grid-template-columns:55% 45%;gap:24px;align-items:stretch;margin-bottom:24px;}}.os-right{{font-size:10.5px;line-height:1.45;color:#555;background:#f8f9fb;border:1px solid #e0e4ea;border-radius:6px;padding:16px 20px;}}.os-right h3{{font-size:13px;margin:0 0 8px;}}.os-right p{{margin-bottom:4px;}}.note-ref{{font-size:9px;color:#C5A258;font-weight:700;vertical-align:super;}}
 .loc-grid{{display:grid;grid-template-columns:58% 42%;gap:28px;align-items:start;}}.loc-left{{max-height:380px;overflow:hidden;}}.loc-left p{{font-size:13.5px;line-height:1.7;margin-bottom:14px;}}.loc-right{{display:block;max-height:380px;overflow:hidden;}}.loc-wide-map{{width:100%;height:200px;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-top:20px;}}.loc-wide-map img{{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}}
 .tr-tagline{{font-size:24px;font-weight:600;color:#1B3A5C;text-align:center;padding:16px 24px;margin-bottom:20px;border-left:4px solid #C5A258;background:#FFF8E7;border-radius:0 4px 4px 0;font-style:italic;}}.tr-map-print{{display:none;}}.tr-service-quote{{margin:24px 0;}}.tr-service-quote h3{{font-size:18px;font-weight:700;color:#1B3A5C;margin-bottom:8px;line-height:1.3;}}.tr-service-quote p{{font-size:14px;line-height:1.7;}}.tr-mission{{background:#f0f4f8;border-left:4px solid #1B3A5C;padding:20px 24px;margin-bottom:24px;border-radius:0 4px 4px 0;}}.tr-mission h3{{font-size:18px;font-weight:700;color:#1B3A5C;margin-bottom:12px;}}.tr-mission p{{font-size:13px;line-height:1.7;margin-bottom:10px;}}
-.inv-split{{display:grid;grid-template-columns:50% 50%;gap:24px;}}.inv-left .metrics-grid-4{{grid-template-columns:repeat(2,1fr);}}.inv-text p{{font-size:13px;line-height:1.6;margin-bottom:10px;}}.inv-logo{{width:200px;margin-top:16px;opacity:0.7;}}.inv-right{{display:flex;flex-direction:column;gap:16px;padding-top:70px;}}.inv-photo{{height:280px;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);}}.inv-photo img{{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}}.inv-highlights{{background:#f0f4f8;border:1px solid #dce3eb;border-radius:8px;padding:16px 20px;flex:1;}}.inv-highlights h4{{color:#1B3A5C;font-size:13px;margin-bottom:8px;}}.inv-highlights ul{{margin:0;padding-left:18px;}}.inv-highlights li{{font-size:12px;line-height:1.5;margin-bottom:5px;}}
+.inv-split{{display:grid;grid-template-columns:50% 50%;gap:24px;}}.inv-left .metrics-grid-4{{grid-template-columns:repeat(2,1fr);}}.inv-text p{{font-size:13px;line-height:1.6;margin-bottom:10px;}}.inv-logo{{display:none;}}.inv-right{{display:flex;flex-direction:column;gap:16px;padding-top:70px;}}.inv-photo{{height:280px;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);}}.inv-photo img{{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}}.inv-highlights{{background:#f0f4f8;border:1px solid #dce3eb;border-radius:8px;padding:16px 20px;flex:1;}}.inv-highlights h4{{color:#1B3A5C;font-size:13px;margin-bottom:8px;}}.inv-highlights ul{{margin:0;padding-left:18px;}}.inv-highlights li{{font-size:12px;line-height:1.5;margin-bottom:5px;}}
 .buyer-split{{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}}.buyer-objections .obj-item{{margin-bottom:14px;}}.buyer-objections .obj-q{{font-weight:700;color:#1B3A5C;margin-bottom:4px;font-size:14px;}}.buyer-objections .obj-a{{font-size:13px;color:#444;line-height:1.6;}}.buyer-photo{{width:100%;height:220px;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-top:24px;}}.buyer-photo img{{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}}
 .prop-tables-bottom{{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;}}.prop-tables-bottom .sub-heading{{font-size:15px;margin:0 0 10px;}}.prop-grid-4{{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:20px;}}
 .summary-page{{margin-top:24px;border:1px solid #dce3eb;border-radius:8px;padding:20px;background:#fff;}}.summary-banner{{text-align:center;background:#1B3A5C;color:#fff;padding:10px 16px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:4px;margin-bottom:16px;}}.summary-two-col{{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}}.summary-table{{width:100%;border-collapse:collapse;margin-bottom:12px;font-size:12px;border:1px solid #dce3eb;}}.summary-table th,.summary-table td{{padding:4px 8px;border-bottom:1px solid #e8ecf0;text-align:left;}}.summary-table td.num{{text-align:right;}}.summary-table th.num{{text-align:right;}}.summary-header{{background:#1B3A5C;color:#fff;padding:5px 8px !important;font-size:10px !important;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-bottom:none !important;}}.summary-table tr.summary td{{border-top:2px solid #1B3A5C;font-weight:700;background:#f0f4f8;}}.summary-table tr:nth-child(even){{background:#fafbfc;}}.summary-trade-range{{text-align:center;margin:24px auto;padding:16px 24px;border:2px solid #1B3A5C;border-radius:6px;max-width:480px;}}.summary-trade-label{{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#555;font-weight:600;margin-bottom:6px;}}.summary-trade-prices{{font-size:26px;font-weight:700;color:#1B3A5C;}}
@@ -782,7 +782,7 @@ html_parts.append(f"""
 <div class="tr-map-print"><img src="{IMG['closings_map']}" alt="LAAA Team All-Time Closings Map - LA County"></div>
 
 <div class="tr-service-quote">
-<h3>We Didn&rsquo;t Invent Great Service, We Just Work Relentlessly to Provide It</h3>
+<h3>We Didn't Invent Great Service, We Just Work Relentlessly to Provide It</h3>
 <p>At LAAA Team, we are dedicated to delivering expert multifamily brokerage services in Los Angeles, helping investors navigate the market with precision, strategy, and results-driven execution. With over 500 closed transactions and $1.6B in total sales volume, our team thrives on providing data-driven insights, strategic deal structuring, and hands-on client service to maximize value for our clients.</p>
 <p>Founded by Glen Scher and Filip Niculete, LAAA Team operates with a commitment to transparency, efficiency, and unmatched market expertise. We take a relationship-first approach, guiding property owners, investors, and developers through every stage of acquisition, disposition, and asset repositioning.</p>
 <p>Our mission is simple: To be the most trusted and results-oriented multifamily advisors in Los Angeles, leveraging deep market knowledge, innovative technology, and a proactive deal-making strategy to drive long-term success for our clients.</p>
@@ -971,11 +971,11 @@ html_parts.append(f"""
 </div>
 
 <div class="inv-text">
-<p>The LAAA Team of Marcus &amp; Millichap is pleased to present for sale 500 N Alexandria Avenue, a 7-unit multifamily investment opportunity in the heart of Los Angeles&rsquo; Koreatown-East Hollywood corridor. Situated on a quiet residential block between Rosewood Avenue and Clinton Street, the property comprises a well-maintained two-story front building (1923) and a rear accessory dwelling unit completed in 2025. The property offers immediate cash flow with significant embedded rent upside through tenant turnover.</p>
+<p>The LAAA Team of Marcus &amp; Millichap is pleased to present for sale 500 N Alexandria Avenue, a 7-unit multifamily investment opportunity in the heart of Los Angeles' Koreatown-East Hollywood corridor. Situated on a quiet residential block between Rosewood Avenue and Clinton Street, the property comprises a well-maintained two-story front building (1923) and a rear accessory dwelling unit completed in 2025. The property offers immediate cash flow with significant embedded rent upside through tenant turnover.</p>
 
-<p>The property features a diverse unit mix of four 2-bedroom/1-bathroom apartments, two studios, and one recently completed ADU &mdash; all 100% occupied. In-place rents range from $895 to $2,400 per month, with three units already at or near market levels and four rent-stabilized units offering substantial upside as tenants vacate naturally. The building benefits from recent capital improvements including a full electrical upgrade (400 amps, 6 panels) and the newly constructed ADU.</p>
+<p>The property features a diverse unit mix of four 2-bedroom/1-bathroom apartments, two studios, and one recently completed ADU  -  all 100% occupied. In-place rents range from $895 to $2,400 per month, with three units already at or near market levels and four rent-stabilized units offering substantial upside as tenants vacate naturally. The building benefits from recent capital improvements including a full electrical upgrade (400 amps, 6 panels) and the newly constructed ADU.</p>
 
-<p>Zoned R3-1 with TOC Tier 3 overlay and located within a federally designated Opportunity Zone, 500 N Alexandria presents a compelling value-add opportunity. At a suggested list price of $1,275,000, the property delivers a current-year cap rate of 5.48% with a pro forma cap rate of 7.42% upon full renovation and turnover &mdash; offering investors attractive risk-adjusted returns with meaningful upside in one of LA&rsquo;s strongest rental markets.</p>
+<p>Zoned R3-1 with TOC Tier 3 overlay and located within a federally designated Opportunity Zone, 500 N Alexandria presents a compelling value-add opportunity. At a suggested list price of $1,275,000, the property delivers a current-year cap rate of 5.48% with a pro forma cap rate of 7.42% upon full renovation and turnover  -  offering investors attractive risk-adjusted returns with meaningful upside in one of LA's strongest rental markets.</p>
 </div>
 <img class="inv-logo" src="{IMG['logo']}" alt="LAAA Team">
 </div>
@@ -985,7 +985,7 @@ html_parts.append(f"""
 <div class="inv-highlights">
 <h4>Investment Highlights</h4>
 <ul>
-<li><strong>Value-Add Upside</strong>  -  18.5% rent lift potential ($26,064/yr) through natural RSO turnover and classic unit renovations ($18K&ndash;$25K per unit)</li>
+<li><strong>Value-Add Upside</strong>  -  18.5% rent lift potential ($26,064/yr) through natural RSO turnover and classic unit renovations ($18K-$25K per unit)</li>
 <li><strong>Newly Completed ADU</strong>  -  2025 Certificate of Occupancy; fully legal 248 SF studio generating $1,875/month ($22,500/yr)</li>
 <li><strong>100% Occupied</strong>  -  Immediate cash flow from day one with zero vacancy risk; $141,036 annual gross rent</li>
 <li><strong>TOC Tier 3 &amp; Opportunity Zone</strong>  -  Enhanced development potential and tax benefits for qualified investors holding 10+ years</li>
@@ -1009,11 +1009,11 @@ html_parts.append(f"""
 
 <div class="loc-grid">
 <div class="loc-left">
-<p>500 N Alexandria Avenue occupies a prime position at the intersection of two of Los Angeles&rsquo; most dynamic neighborhoods &mdash; Koreatown and East Hollywood. This area has experienced a remarkable transformation over the past decade, evolving into one of the city&rsquo;s most desirable rental markets driven by proximity to major employment centers, world-class dining, and unparalleled transit access. The neighborhood&rsquo;s dense urban fabric and walkable streetscape attract a young, professional tenant base that values convenience and lifestyle amenities. Koreatown consistently ranks among the lowest-vacancy multifamily submarkets in Los Angeles County.</p>
+<p>500 N Alexandria Avenue occupies a prime position at the intersection of two of Los Angeles' most dynamic neighborhoods  -  Koreatown and East Hollywood. This area has experienced a remarkable transformation over the past decade, evolving into one of the city's most desirable rental markets driven by proximity to major employment centers, world-class dining, and unparalleled transit access. The neighborhood's dense urban fabric and walkable streetscape attract a young, professional tenant base that values convenience and lifestyle amenities. Koreatown consistently ranks among the lowest-vacancy multifamily submarkets in Los Angeles County.</p>
 
-<p>The property benefits from exceptional connectivity. The Metro B (Red) Line station at Vermont/Beverly is just 0.6 miles away, providing direct access to Hollywood, Downtown LA, and North Hollywood. Major arterials including Vermont Avenue, Western Avenue, and the 101 Freeway are all within minutes. Residents enjoy walkable access to hundreds of restaurants, caf&eacute;s, and shops along Vermont and Western corridors, Wilshire Boulevard&rsquo;s commercial district, and cultural institutions including the Wilshire Country Club, Barnsdall Art Park, and the forthcoming Metro Purple Line extension stations that will further enhance connectivity.</p>
+<p>The property benefits from exceptional connectivity. The Metro B (Red) Line station at Vermont/Beverly is just 0.6 miles away, providing direct access to Hollywood, Downtown LA, and North Hollywood. Major arterials including Vermont Avenue, Western Avenue, and the 101 Freeway are all within minutes. Residents enjoy walkable access to hundreds of restaurants, caf&eacute;s, and shops along Vermont and Western corridors, Wilshire Boulevard's commercial district, and cultural institutions including the Wilshire Country Club, Barnsdall Art Park, and the forthcoming Metro Purple Line extension stations that will further enhance connectivity.</p>
 
-<p>The property sits in a clean environmental zone &mdash; outside of flood, landslide, liquefaction, fire hazard, methane, and Alquist-Priolo earthquake fault zones per ZIMAS records. The location scores highly across walkability and transit metrics, reflecting the urban density and infrastructure that make this submarket particularly attractive to car-optional tenants.</p>
+<p>The property sits in a clean environmental zone  -  outside of flood, landslide, liquefaction, fire hazard, methane, and Alquist-Priolo earthquake fault zones per ZIMAS records. The location scores highly across walkability and transit metrics, reflecting the urban density and infrastructure that make this submarket particularly attractive to car-optional tenants.</p>
 </div>
 <div class="loc-right">
 <table class="info-table">
@@ -1021,7 +1021,7 @@ html_parts.append(f"""
 <tbody>
 <tr><td>Walk Score</td><td>85</td></tr>
 <tr><td>Transit Score</td><td>Good</td></tr>
-<tr><td>Nearest Metro</td><td>Vermont/Beverly (B Line) &mdash; 0.6 mi</td></tr>
+<tr><td>Nearest Metro</td><td>Vermont/Beverly (B Line)  -  0.6 mi</td></tr>
 <tr><td>Council District</td><td>CD 13 (Hugo Soto-Martinez)</td></tr>
 <tr><td>Community Plan</td><td>Wilshire</td></tr>
 <tr><td>Neighborhood</td><td>Koreatown / East Hollywood</td></tr>
@@ -1086,7 +1086,7 @@ html_parts.append("""
 <thead><tr><th colspan="2">Building Systems</th></tr></thead>
 <tbody>
 <tr><td>Roof</td><td>Composition (last replaced ~1993)</td></tr>
-<tr><td>Electrical</td><td>Upgraded 2024 &mdash; 400 amps, 6 panels</td></tr>
+<tr><td>Electrical</td><td>Upgraded 2024  -  400 amps, 6 panels</td></tr>
 <tr><td>Plumbing</td><td>Original (galvanized)</td></tr>
 <tr><td>Foundation</td><td>Concrete perimeter</td></tr>
 <tr><td>Exterior</td><td>Stucco over wood frame</td></tr>
@@ -1101,7 +1101,7 @@ html_parts.append("""
 <table class="info-table">
 <thead><tr><th colspan="2">Regulatory &amp; Compliance</th></tr></thead>
 <tbody>
-<tr><td>Rent Stabilization</td><td>Yes &mdash; RSO (pre-10/1/1978)</td></tr>
+<tr><td>Rent Stabilization</td><td>Yes  -  RSO (pre-10/1/1978)</td></tr>
 <tr><td>Soft-Story Retrofit</td><td>NOT Required (LADBS)</td></tr>
 <tr><td>Code Enforcement</td><td>0 open cases (LADBS)</td></tr>
 <tr><td>Seismic Zone</td><td>Zone 4</td></tr>
@@ -1139,11 +1139,11 @@ html_parts.append("""
 
 <h3 class="sub-heading">Price Appreciation</h3>
 
-<p>500 N Alexandria Avenue has demonstrated consistent value appreciation over the past decade. The property last traded in October 2017 for $800,000 ($114,286/unit) when Teddy Management LLC acquired it from Cho, Eric S. Prior to that, the property traded twice in rapid succession &mdash; $390,000 in 2012 and $550,000 in 2015 &mdash; reflecting the broader market recovery following the Great Recession and growing investor appetite for rent-controlled assets with upside.</p>
+<p>500 N Alexandria Avenue has demonstrated consistent value appreciation over the past decade. The property last traded in October 2017 for $800,000 ($114,286/unit) when Teddy Management LLC acquired it from Cho, Eric S. Prior to that, the property traded twice in rapid succession  -  $390,000 in 2012 and $550,000 in 2015  -  reflecting the broader market recovery following the Great Recession and growing investor appetite for rent-controlled assets with upside.</p>
 
-<p>Since the 2017 acquisition, the current ownership has added significant value through the construction of a legal ADU (Certificate of Occupancy issued July 2025), effectively increasing the unit count from 6 to 7 and adding approximately $22,500 in annual rental income. The existing financing &mdash; a $728,750 variable-rate loan from Bank of Hope originated in April 2021 &mdash; suggests the owner refinanced to fund improvements, positioning the property for its current market-rate potential.</p>
+<p>Since the 2017 acquisition, the current ownership has added significant value through the construction of a legal ADU (Certificate of Occupancy issued July 2025), effectively increasing the unit count from 6 to 7 and adding approximately $22,500 in annual rental income. The existing financing  -  a $728,750 variable-rate loan from Bank of Hope originated in April 2021  -  suggests the owner refinanced to fund improvements, positioning the property for its current market-rate potential.</p>
 
-<p>The property&rsquo;s assessed value of $1,707,340 (2025) represents a 113% increase from the $800,000 acquisition price, reflecting both the ADU addition and assessed value growth. At the suggested list price of $1,275,000, the owner would realize approximately 59% appreciation over their 8.5-year hold period &mdash; a strong outcome for a rent-controlled asset.</p>
+<p>The property's assessed value of $1,707,340 (2025) represents a 113% increase from the $800,000 acquisition price, reflecting both the ADU addition and assessed value growth. At the suggested list price of $1,275,000, the owner would realize approximately 59% appreciation over their 8.5-year hold period  -  a strong outcome for a rent-controlled asset.</p>
 
 </div>
 """)
@@ -1162,9 +1162,9 @@ html_parts.append(f"""
 <div class="buyer-profile-label">Target Buyer Profile</div>
 <ul>
 <li><strong>1031 Exchange Investor</strong>  -  Time-constrained exchangers seeking a stabilized asset with immediate cash flow. The 100% occupancy, diverse unit mix, and sub-$1.5M price point make this an ideal downleg replacement within a 45-day identification window.</li>
-<li><strong>Local Value-Add Operator</strong>  -  Hands-on investors targeting RSO turnover plays. With 4 below-market units and a proven renovation playbook ($18K&ndash;$25K per unit), an experienced operator can capture $26,064 in annual rent lift through natural tenant turnover.</li>
+<li><strong>Local Value-Add Operator</strong>  -  Hands-on investors targeting RSO turnover plays. With 4 below-market units and a proven renovation playbook ($18K-$25K per unit), an experienced operator can capture $26,064 in annual rent lift through natural tenant turnover.</li>
 <li><strong>Portfolio Consolidator</strong>  -  Small to mid-size multifamily investors adding an income-producing asset to an existing LA portfolio. R3-1 zoning, TOC Tier 3 overlay, and Opportunity Zone designation offer long-term optionality.</li>
-<li><strong>ADU-Focused Investor</strong>  -  Investors drawn to the recently completed ADU (CofO 2025) as proof of concept for LA&rsquo;s growing ADU market. The legal unit adds $22,500/yr income and demonstrates the property&rsquo;s ability to support additional density.</li>
+<li><strong>ADU-Focused Investor</strong>  -  Investors drawn to the recently completed ADU (CofO 2025) as proof of concept for LA's growing ADU market. The legal unit adds $22,500/yr income and demonstrates the property's ability to support additional density.</li>
 </ul>
 <p class="bp-closing">Broad appeal across buyer segments supports competitive pricing and a compressed marketing timeline.</p>
 </div>
@@ -1175,23 +1175,23 @@ html_parts.append(f"""
 <div class="buyer-objections">
 
 <div class="obj-item">
-<p class="obj-q">&ldquo;The building is over 100 years old &mdash; won&rsquo;t maintenance costs be astronomical?&rdquo;</p>
-<p class="obj-a">While the building&rsquo;s pre-war vintage requires responsible stewardship, several factors mitigate maintenance risk: the electrical system was fully upgraded in 2024 (400 amps, 6 panels), the ADU was professionally constructed with a 2025 Certificate of Occupancy, and LADBS records show zero code enforcement cases. The building is NOT on the soft-story retrofit list. Pre-war construction in Los Angeles has proven remarkably durable &mdash; the original 1923 building has stood for over a century.</p>
+<p class="obj-q">&ldquo;The building is over 100 years old  -  won't maintenance costs be astronomical?&rdquo;</p>
+<p class="obj-a">While the building's pre-war vintage requires responsible stewardship, several factors mitigate maintenance risk: the electrical system was fully upgraded in 2024 (400 amps, 6 panels), the ADU was professionally constructed with a 2025 Certificate of Occupancy, and LADBS records show zero code enforcement cases. The building is NOT on the soft-story retrofit list. Pre-war construction in Los Angeles has proven remarkably durable  -  the original 1923 building has stood for over a century.</p>
 </div>
 
 <div class="obj-item">
-<p class="obj-q">&ldquo;Only ~1 parking space for 7 units &mdash; won&rsquo;t that scare buyers and tenants?&rdquo;</p>
-<p class="obj-a">Parking is the most common objection in Koreatown, yet it rarely affects occupancy or rents in practice. The property has maintained 100% occupancy, and comp buildings with zero parking (212 S Berendo, 101 S Kenmore) have traded at $191K&ndash;$199K/unit. The Walk Score of 85 and proximity to Metro B Line (0.6 mi) attract the growing population of car-optional renters. AB 2097 further reduces parking requirements for transit-adjacent development.</p>
+<p class="obj-q">&ldquo;Only ~1 parking space for 7 units  -  won't that scare buyers and tenants?&rdquo;</p>
+<p class="obj-a">Parking is the most common objection in Koreatown, yet it rarely affects occupancy or rents in practice. The property has maintained 100% occupancy, and comp buildings with zero parking (212 S Berendo, 101 S Kenmore) have traded at $191K-$199K/unit. The Walk Score of 85 and proximity to Metro B Line (0.6 mi) attract the growing population of car-optional renters. AB 2097 further reduces parking requirements for transit-adjacent development.</p>
 </div>
 
 <div class="obj-item">
 <p class="obj-q">&ldquo;RSO limits my ability to increase rents.&rdquo;</p>
-<p class="obj-a">RSO is an advantage for sellers, not a liability. Vacancy decontrol under Costa-Hawkins allows owners to reset rents to market upon natural tenant turnover. The 4 RSO tenants represent $2,172/month ($26,064/year) in embedded upside &mdash; a built-in value-add that doesn&rsquo;t require entitlements, approvals, or construction.</p>
+<p class="obj-a">RSO is an advantage for sellers, not a liability. Vacancy decontrol under Costa-Hawkins allows owners to reset rents to market upon natural tenant turnover. The 4 RSO tenants represent $2,172/month ($26,064/year) in embedded upside  -  a built-in value-add that doesn't require entitlements, approvals, or construction.</p>
 </div>
 
 <div class="obj-item">
 <p class="obj-q">&ldquo;Why is the price per unit lower than other recent sales?&rdquo;</p>
-<p class="obj-a">The $182,143/unit price reflects the property&rsquo;s unique position as a 7-unit building with limited parking and a mixed unit mix (studios, 2BRs, and ADU). However, this is precisely what creates the opportunity: the pro forma cap rate of 7.42% exceeds comparable closed sales, and the ADU &mdash; which adds ~$215K in capitalized value &mdash; is a premium feature not available in most vintage comp properties.</p>
+<p class="obj-a">The $182,143/unit price reflects the property's unique position as a 7-unit building with limited parking and a mixed unit mix (studios, 2BRs, and ADU). However, this is precisely what creates the opportunity: the pro forma cap rate of 7.42% exceeds comparable closed sales, and the ADU  -  which adds ~$215K in capitalized value  -  is a premium feature not available in most vintage comp properties.</p>
 </div>
 
 </div>
@@ -1228,11 +1228,11 @@ html_parts.append(f"""
 
 <h3 class="sub-heading">Market Narrative</h3>
 
-<p>The Koreatown-Mid Wilshire multifamily market has demonstrated resilience through the rate cycle. Three arm&rsquo;s-length closed sales within the past eight months provide a clear pricing framework for vintage RSO apartment buildings in the 90004 zip code. The anchor comparable &mdash; 101 S Kenmore Avenue, an 8-unit 1925-vintage building &mdash; traded at $199,375 per unit with a 7.29% adjusted cap rate, establishing the premium end of the market for well-maintained properties with reliable financial data.</p>
+<p>The Koreatown-Mid Wilshire multifamily market has demonstrated resilience through the rate cycle. Three arm's-length closed sales within the past eight months provide a clear pricing framework for vintage RSO apartment buildings in the 90004 zip code. The anchor comparable  -  101 S Kenmore Avenue, an 8-unit 1925-vintage building  -  traded at $199,375 per unit with a 7.29% adjusted cap rate, establishing the premium end of the market for well-maintained properties with reliable financial data.</p>
 
-<p>Pricing dynamics reflect a market that rewards income quality. 212 S Berendo &mdash; with 8 deeply rent-controlled 2BR units and 108% rent upside &mdash; traded at a compressed 4.15% cap rate, demonstrating that buyers are willing to accept lower current yields when the embedded upside is substantial and clearly documented. In contrast, 247 N New Hampshire&rsquo;s off-market sale at $116,667/unit illustrates the discount applied to smaller units (studios) with unreliable financial data.</p>
+<p>Pricing dynamics reflect a market that rewards income quality. 212 S Berendo  -  with 8 deeply rent-controlled 2BR units and 108% rent upside  -  traded at a compressed 4.15% cap rate, demonstrating that buyers are willing to accept lower current yields when the embedded upside is substantial and clearly documented. In contrast, 247 N New Hampshire's off-market sale at $116,667/unit illustrates the discount applied to smaller units (studios) with unreliable financial data.</p>
 
-<p>At $182,143 per unit, 500 N Alexandria is competitively positioned within the closed comp range. The subject&rsquo;s mixed unit types (2BR + studio + ADU), limited parking, and smaller building footprint justify a modest discount to the Kenmore benchmark, while the 2025 ADU, TOC Tier 3 overlay, and Opportunity Zone status provide upside optionality not available in any closed comp. The SP/LP ratio averaging 95% suggests list-to-close negotiation of approximately 3&ndash;5%.</p>
+<p>At $182,143 per unit, 500 N Alexandria is competitively positioned within the closed comp range. The subject's mixed unit types (2BR + studio + ADU), limited parking, and smaller building footprint justify a modest discount to the Kenmore benchmark, while the 2025 ADU, TOC Tier 3 overlay, and Opportunity Zone status provide upside optionality not available in any closed comp. The SP/LP ratio averaging 95% suggests list-to-close negotiation of approximately 3-5%.</p>
 
 </div>
 """)
@@ -1261,9 +1261,9 @@ html_parts.append(f"""
 
 <h3 class="sub-heading">Competitive Positioning</h3>
 
-<p>The active on-market inventory provides important context for the subject&rsquo;s competitive positioning. The pending sale at 502 N Serrano ($224,375/unit) validates buyer demand in the submarket at a higher price point, while fresh listings at 121 and 127 S Oxford ($200K&ndash;$225K/unit) will test the market&rsquo;s appetite for post-war 1BR product. Two stale listings &mdash; 426 N Virgil (133 DOM) and 4053 Oakwood (285 DOM) &mdash; have both reduced their asking prices, suggesting the market has a clear ceiling for aggressive pricing.</p>
+<p>The active on-market inventory provides important context for the subject's competitive positioning. The pending sale at 502 N Serrano ($224,375/unit) validates buyer demand in the submarket at a higher price point, while fresh listings at 121 and 127 S Oxford ($200K-$225K/unit) will test the market's appetite for post-war 1BR product. Two stale listings  -  426 N Virgil (133 DOM) and 4053 Oakwood (285 DOM)  -  have both reduced their asking prices, suggesting the market has a clear ceiling for aggressive pricing.</p>
 
-<p>At $182,143 per unit, 500 N Alexandria is priced below every active and pending comparable in the submarket, creating an immediate competitive advantage. The most relevant on-market comparable &mdash; 310 N St Andrews Place, which also features 2025 ADUs &mdash; is asking $311,250/unit, nearly 70% higher than the subject. While St Andrews benefits from a more extensive renovation program, the pricing gap highlights the value proposition available at 500 N Alexandria for buyers seeking ADU exposure at an accessible price point.</p>
+<p>At $182,143 per unit, 500 N Alexandria is priced below every active and pending comparable in the submarket, creating an immediate competitive advantage. The most relevant on-market comparable  -  310 N St Andrews Place, which also features 2025 ADUs  -  is asking $311,250/unit, nearly 70% higher than the subject. While St Andrews benefits from a more extensive renovation program, the pricing gap highlights the value proposition available at 500 N Alexandria for buyers seeking ADU exposure at an accessible price point.</p>
 
 </div>
 """)
@@ -1288,7 +1288,7 @@ html_parts.append(f"""
 for i, rc in enumerate(RENT_COMPS_2BR):
     html_parts.append(f'<tr><td>{i+1}</td><td>{rc["addr"]}</td><td>${rc["rent"]:,}</td><td>{rc["reno"]}</td><td>{rc["dist"]}</td><td style="font-size:11px;">{rc["features"]}</td></tr>\n')
 br2_rents = [rc["rent"] for rc in RENT_COMPS_2BR]
-html_parts.append(f'<tr style="font-weight:600;background:#FFF8E7;"><td></td><td><strong>Summary</strong></td><td>${min(br2_rents):,}&ndash;${max(br2_rents):,}</td><td></td><td></td><td>Avg ${sum(br2_rents)//len(br2_rents):,} | <strong>Median ${int(statistics.median(br2_rents)):,}</strong></td></tr>\n')
+html_parts.append(f'<tr style="font-weight:600;background:#FFF8E7;"><td></td><td><strong>Summary</strong></td><td>${min(br2_rents):,}-${max(br2_rents):,}</td><td></td><td></td><td>Avg ${sum(br2_rents)//len(br2_rents):,} | <strong>Median ${int(statistics.median(br2_rents)):,}</strong></td></tr>\n')
 html_parts.append("""
 </tbody>
 </table></div>
@@ -1301,18 +1301,18 @@ html_parts.append("""
 for i, rc in enumerate(RENT_COMPS_STUDIO):
     html_parts.append(f'<tr><td>{i+1}</td><td>{rc["addr"]}</td><td>${rc["rent"]:,}</td><td>{rc["reno"]}</td><td>{rc["dist"]}</td><td style="font-size:11px;">{rc["features"]}</td></tr>\n')
 studio_rents = [rc["rent"] for rc in RENT_COMPS_STUDIO]
-html_parts.append(f'<tr style="font-weight:600;background:#FFF8E7;"><td></td><td><strong>Summary</strong></td><td>${min(studio_rents):,}&ndash;${max(studio_rents):,}</td><td></td><td></td><td>Avg ${sum(studio_rents)//len(studio_rents):,} | <strong>Median ${int(statistics.median(studio_rents)):,}</strong></td></tr>\n')
+html_parts.append(f'<tr style="font-weight:600;background:#FFF8E7;"><td></td><td><strong>Summary</strong></td><td>${min(studio_rents):,}-${max(studio_rents):,}</td><td></td><td></td><td>Avg ${sum(studio_rents)//len(studio_rents):,} | <strong>Median ${int(statistics.median(studio_rents)):,}</strong></td></tr>\n')
 html_parts.append(f"""
 </tbody>
 </table></div>
 
 <h3 class="sub-heading">Pro Forma Rent Narrative</h3>
 
-<p>The rent comp survey confirms meaningful upside for 500 N Alexandria&rsquo;s below-market units. Renovated 2-bedroom apartments in pre-war Koreatown buildings are consistently achieving $2,095 to $2,350 per month, with the median settling at $2,200 &mdash; the basis for our pro forma assumption on the RSO 2BR units (502 and 504). This represents a conservative approach, positioned at the center rather than the top of the comparable range.</p>
+<p>The rent comp survey confirms meaningful upside for 500 N Alexandria's below-market units. Renovated 2-bedroom apartments in pre-war Koreatown buildings are consistently achieving $2,095 to $2,350 per month, with the median settling at $2,200  -  the basis for our pro forma assumption on the RSO 2BR units (502 and 504). This represents a conservative approach, positioned at the center rather than the top of the comparable range.</p>
 
-<p>Studios in the same vintage-building profile lease at $1,395 to $1,445 post-renovation, with the median at $1,425. The subject&rsquo;s ADU at $1,875 for 248 SF ($7.56/SF) is already at or near the market ceiling for micro-unit product. No additional rent lift is assumed for the ADU, reflecting a realistic assessment of the size constraint. The overall pro forma rent schedule of $13,925/month ($167,100/year) represents an 18.5% increase over current in-place rents &mdash; achievable through natural RSO turnover and a classic renovation scope of $18K&ndash;$25K per unit.</p>
+<p>Studios in the same vintage-building profile lease at $1,395 to $1,445 post-renovation, with the median at $1,425. The subject's ADU at $1,875 for 248 SF ($7.56/SF) is already at or near the market ceiling for micro-unit product. No additional rent lift is assumed for the ADU, reflecting a realistic assessment of the size constraint. The overall pro forma rent schedule of $13,925/month ($167,100/year) represents an 18.5% increase over current in-place rents  -  achievable through natural RSO turnover and a classic renovation scope of $18K-$25K per unit.</p>
 
-<p>Confidence level is moderate-conservative. The pro forma rents are set at or slightly below the median comp range to account for the subject&rsquo;s smaller lot, limited parking, and absence of premium amenities like in-unit washer/dryers or central air. Vintage small buildings in this submarket are largely insulated from new Class A competition, which targets a different tenant demographic at a higher price point.</p>
+<p>Confidence level is moderate-conservative. The pro forma rents are set at or slightly below the median comp range to account for the subject's smaller lot, limited parking, and absence of premium amenities like in-unit washer/dryers or central air. Vintage small buildings in this submarket are largely insulated from new Class A competition, which targets a different tenant demographic at a higher price point.</p>
 
 </div>
 """)
@@ -1350,7 +1350,7 @@ html_parts.append(f"""
 <div class="os-right">
 <h3 class="sub-heading">Notes to Operating Statement</h3>
 <p><strong>[1] Other Income:</strong> None. No laundry, no separate parking income, no RUBS.</p>
-<p><strong>[2] Real Estate Taxes:</strong> Reassessed to list price at 1.17% LA County rate. Seller&rsquo;s Prop 13 basis: $21,283 on $1.707M assessed.</p>
+<p><strong>[2] Real Estate Taxes:</strong> Reassessed to list price at 1.17% LA County rate. Seller's Prop 13 basis: $21,283 on $1.707M assessed.</p>
 <p><strong>[3] Insurance:</strong> $900/unit. Broker-optimistic $800 + $100 pre-1950 adjustment. Wood frame, soft-story NOT required.</p>
 <p><strong>[4] Water / Sewer:</strong> $500/bedroom &times; 11 bedrooms. Always landlord-paid. No pool.</p>
 <p><strong>[5] Trash:</strong> $400/unit &times; 7. LA recycling/organic bins included.</p>
@@ -1483,16 +1483,16 @@ html_parts.append(f"""
 
 <div class="summary-trade-range">
 <div class="summary-trade-label">A TRADE PRICE IN THE CURRENT INVESTMENT ENVIRONMENT OF</div>
-<div class="summary-trade-prices">$1,200,000 &mdash; $1,275,000</div>
+<div class="summary-trade-prices">$1,200,000  -  $1,275,000</div>
 </div>
 
 <h3 class="sub-heading">Pricing Rationale</h3>
 
-<p>The suggested list price of <strong>$1,275,000</strong> positions 500 N Alexandria as one of the most compelling value-add opportunities currently available in the Koreatown submarket. At $182,143 per unit and a 5.48% current cap rate, the pricing falls within the established range of comparable closed sales while offering a materially superior pro forma return of 7.42% upon full renovation and turnover &mdash; an outcome supported by 12 building-level and 16 unit-level rent comparables.</p>
+<p>The suggested list price of <strong>$1,275,000</strong> positions 500 N Alexandria as one of the most compelling value-add opportunities currently available in the Koreatown submarket. At $182,143 per unit and a 5.48% current cap rate, the pricing falls within the established range of comparable closed sales while offering a materially superior pro forma return of 7.42% upon full renovation and turnover  -  an outcome supported by 12 building-level and 16 unit-level rent comparables.</p>
 
-<p>The pricing strategy balances seller optimization with buyer accessibility. At 55% LTV, a buyer can secure conventional financing at approximately 6.00% with a comfortable 1.38x debt service coverage ratio, generating positive cash flow from day one. The $573,750 equity requirement is accessible to the 1031 exchange investor pool that comprises 61% of LAAA Team&rsquo;s closed transactions, ensuring a deep bench of qualified buyers.</p>
+<p>The pricing strategy balances seller optimization with buyer accessibility. At 55% LTV, a buyer can secure conventional financing at approximately 6.00% with a comfortable 1.38x debt service coverage ratio, generating positive cash flow from day one. The $573,750 equity requirement is accessible to the 1031 exchange investor pool that comprises 61% of LAAA Team's closed transactions, ensuring a deep bench of qualified buyers.</p>
 
-<p>Three independent valuation methods &mdash; cap rate, price-per-unit, and gross rent multiplier &mdash; converge tightly around the $1,225,000&ndash;$1,300,000 range, providing high confidence in the suggested price. On-market competition is limited at this price point (every comparable listing exceeds $1,595,000), giving the subject a meaningful competitive advantage that should drive strong buyer interest and a compressed marketing timeline.</p>
+<p>Three independent valuation methods  -  cap rate, price-per-unit, and gross rent multiplier  -  converge tightly around the $1,225,000-$1,300,000 range, providing high confidence in the suggested price. On-market competition is limited at this price point (every comparable listing exceeds $1,595,000), giving the subject a meaningful competitive advantage that should drive strong buyer interest and a compressed marketing timeline.</p>
 
 <div class="condition-note"><strong>Assumptions &amp; Conditions:</strong> Financing terms are estimates and subject to change; contact your Marcus &amp; Millichap Capital Corporation representative. Vacancy modeled at 5.0% based on Koreatown market conditions. Management fee at MAX(4% EGI, $18,000) reflects third-party professional management minimum for small properties. Real estate taxes estimated at 1.17% of sale price reflecting Proposition 13 reassessment at close of escrow. Operating reserves at $350/unit. All information believed reliable but not guaranteed; buyer to verify independently.</div>
 </div>
