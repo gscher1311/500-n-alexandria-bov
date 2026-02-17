@@ -212,8 +212,8 @@ GSR = 141_036
 PF_GSR = 167_100
 VACANCY_PCT = 0.05
 OTHER_INCOME = 0
-NON_TAX_CUR_EXP = 49_203
-NON_TAX_PF_EXP = 49_203
+NON_TAX_CUR_EXP = 46_203
+NON_TAX_PF_EXP = 46_203
 
 INTEREST_RATE = 0.06
 AMORTIZATION_YEARS = 30
@@ -351,15 +351,15 @@ PF_NOI_AT_LIST = PF_EGI - PF_TOTAL_EXP
 EXPENSE_ITEMS = [
     ("Real Estate Taxes", TAXES_AT_LIST, 2),
     ("Insurance", 6300, 3),
-    ("Water / Sewer", 5500, 4),
-    ("Trash", 2800, 5),
+    ("Water / Sewer", 4400, 4),
+    ("Trash", 2450, 5),
     ("Common Area Electric", 1500, 6),
-    ("Repairs &amp; Maintenance", 9100, 7),
+    ("Repairs &amp; Maintenance", 8400, 7),
     ("Contract Services", 1500, 8),
     ("Administrative", 1000, 9),
-    ("Marketing", 500, 10),
+    ("Marketing", 0, 10),
     ("Management Fee", 18000, 11),
-    ("Reserves", 2450, 12),
+    ("Reserves", 2100, 12),
     ("LAHD Registration", 303, 13),
     ("Other", 250, 14),
 ]
@@ -420,15 +420,15 @@ sum_taxes = AT_LIST['taxes']
 sum_expense_items = [
     ("Real Estate Taxes", sum_taxes, sum_taxes),
     ("Insurance", 6300, 6300),
-    ("Water / Sewer", 5500, 5500),
-    ("Trash", 2800, 2800),
+    ("Water / Sewer", 4400, 4400),
+    ("Trash", 2450, 2450),
     ("Common Area Electric", 1500, 1500),
-    ("Repairs &amp; Maintenance", 9100, 9100),
+    ("Repairs &amp; Maintenance", 8400, 8400),
     ("Contract Services", 1500, 1500),
     ("Administrative", 1000, 1000),
-    ("Marketing", 500, 500),
+    ("Marketing", 0, 0),
     ("Management Fee", 18000, 18000),
-    ("Reserves", 2450, 2450),
+    ("Reserves", 2100, 2100),
     ("LAHD Registration", 303, 303),
     ("Other", 250, 250),
 ]
@@ -487,15 +487,15 @@ income_lines = [
 expense_lines = [
     ("Real Estate Taxes", TAXES_AT_LIST, 2),
     ("Insurance", 6300, 3),
-    ("Water / Sewer", 5500, 4),
-    ("Trash", 2800, 5),
+    ("Water / Sewer", 4400, 4),
+    ("Trash", 2450, 5),
     ("Common Area Electric", 1500, 6),
-    ("Repairs & Maintenance", 9100, 7),
+    ("Repairs & Maintenance", 8400, 7),
     ("Contract Services", 1500, 8),
     ("Administrative", 1000, 9),
-    ("Marketing", 500, 10),
+    ("Marketing", 0, 10),
     ("Management Fee", 18000, 11),
-    ("Reserves", 2450, 12),
+    ("Reserves", 2100, 12),
     ("LAHD Registration", 303, 13),
     ("Other", 250, 14),
 ]
@@ -1352,15 +1352,15 @@ html_parts.append(f"""
 <p><strong>[1] Other Income:</strong> None. No laundry, no separate parking income, no RUBS.</p>
 <p><strong>[2] Real Estate Taxes:</strong> Reassessed to list price at 1.17% LA County rate. Seller's Prop 13 basis: $21,283 on $1.707M assessed.</p>
 <p><strong>[3] Insurance:</strong> $900/unit. Broker-optimistic $800 + $100 pre-1950 adjustment. Wood frame, soft-story NOT required.</p>
-<p><strong>[4] Water / Sewer:</strong> $500/bedroom &times; 11 bedrooms. Always landlord-paid. No pool.</p>
-<p><strong>[5] Trash:</strong> $400/unit &times; 7. LA recycling/organic bins included.</p>
+<p><strong>[4] Water / Sewer:</strong> $400/bedroom &times; 11 bedrooms. Broker-optimistic floor of $400-650 range. Always landlord-paid. No pool.</p>
+<p><strong>[5] Trash:</strong> $350/unit &times; 7. Broker-optimistic floor of $350-500 range. LA recycling/organic bins included.</p>
 <p><strong>[6] Common Area Electric:</strong> $1,500 flat (Tier 1). Minimal common area, no elevator/pool.</p>
-<p><strong>[7] Repairs &amp; Maintenance:</strong> $1,300/unit. Base $1,200 + $150 pre-1940 adj (50%) &minus; $50 ADU/electrical CapEx credit.</p>
+<p><strong>[7] Repairs &amp; Maintenance:</strong> $1,200/unit. Base $1,200 + $150 pre-1940 adj (50%) &minus; $150 CapEx credit (electrical upgrade + ADU = 2 major systems).</p>
 <p><strong>[8] Contract Services:</strong> $1,500 flat (Tier 1). Small lot, minimal landscaping.</p>
 <p><strong>[9] Administrative:</strong> $1,000 flat (Tier 1). Accounting, legal, bank fees, permits.</p>
-<p><strong>[10] Marketing:</strong> $500 flat. 100% occupied, strong rental submarket.</p>
+<p><strong>[10] Marketing:</strong> $0. Market condition override: 100% occupied, strong Koreatown rental submarket with organic tenant demand.</p>
 <p><strong>[11] Management Fee:</strong> MAX(4% EGI, $18,000). Minimum binding at $18K for this small property.</p>
-<p><strong>[12] Reserves:</strong> $350/unit. Pre-1940 base $400 &minus; $50 recent CapEx credit.</p>
+<p><strong>[12] Reserves:</strong> $300/unit. Pre-1940 broker-optimistic base $400 &minus; $100 CapEx credit (electrical + ADU = 2 major systems).</p>
 <p><strong>[13] LAHD Registration:</strong> $43.32/unit &times; 7. RSO property, partially passable to tenants.</p>
 <p><strong>[14] Other:</strong> $250 flat (Tier 1). Miscellaneous catch-all.</p>
 </div>
@@ -1680,15 +1680,15 @@ if ENABLE_CHATBOT:
                 f"Effective Gross Income: ${CUR_EGI:,.0f}\n"
                 f"Real Estate Taxes: ${TAXES_AT_LIST:,.0f}\n"
                 f"Insurance: $6,300\n"
-                f"Water / Sewer: $5,500\n"
-                f"Trash: $2,800\n"
+                f"Water / Sewer: $4,400\n"
+                f"Trash: $2,450\n"
                 f"Common Area Electric: $1,500\n"
-                f"Repairs & Maintenance: $9,100\n"
+                f"Repairs & Maintenance: $8,400\n"
                 f"Contract Services: $1,500\n"
                 f"Administrative: $1,000\n"
-                f"Marketing: $500\n"
+                f"Marketing: $0\n"
                 f"Management Fee: $18,000\n"
-                f"Reserves: $2,450\n"
+                f"Reserves: $2,100\n"
                 f"LAHD Registration: $303\n"
                 f"Other: $250\n"
                 f"Total Expenses: ${CUR_TOTAL_EXP:,.0f}\n"

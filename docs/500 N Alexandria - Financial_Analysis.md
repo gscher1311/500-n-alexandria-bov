@@ -29,22 +29,22 @@
 | **EXPENSES** | | |
 | Property Taxes (1.17% of $1,275,000) | $14,918 | $2,131 |
 | Insurance | $6,300 | $900 |
-| Water / Sewer | $5,500 | $786 |
-| Trash | $2,800 | $400 |
+| Water / Sewer | $4,400 | $629 |
+| Trash | $2,450 | $350 |
 | Common Area Electric | $1,500 | $214 |
-| Repairs & Maintenance | $9,100 | $1,300 |
+| Repairs & Maintenance | $8,400 | $1,200 |
 | Contract Services | $1,500 | $214 |
 | Administrative | $1,000 | $143 |
-| Marketing | $500 | $71 |
+| Marketing | $0 | $0 |
 | Management Fee | $18,000 | $2,571 |
-| Reserves | $2,450 | $350 |
+| Reserves | $2,100 | $300 |
 | LAHD Registration | $303 | $43 |
 | Other | $250 | $36 |
-| **Total Operating Expenses** | **$64,121** | **$9,160** |
+| **Total Operating Expenses** | **$61,121** | **$8,732** |
 | | | |
-| **Net Operating Income** | **$69,863** | **$9,981** |
+| **Net Operating Income** | **$72,863** | **$10,409** |
 
-Expense ratio: 47.9% of EGI (within range for Tier 1 pre-war RSO)
+Expense ratio: 45.6% of EGI (within range for Tier 1 pre-war RSO)
 
 ---
 
@@ -53,7 +53,7 @@ Expense ratio: 47.9% of EGI (within range for Tier 1 pre-war RSO)
 | Metric | Value |
 |--------|-------|
 | **List Price** | $1,275,000 |
-| **Cap Rate** | 5.48% |
+| **Cap Rate** | 5.71% |
 | **GRM** | 9.04x |
 | **Price Per Unit** | $182,143 |
 
@@ -63,13 +63,13 @@ Expense ratio: 47.9% of EGI (within range for Tier 1 pre-war RSO)
 
 | Price | Cap Rate | $/Unit | GRM | Loan (55%) | DSCR | Cash-on-Cash |
 |-------|----------|--------|-----|-----------|------|-------------|
-| $1,175,000 | 6.04% | $167,857 | 8.33x | $646,250 | 1.53x | 4.63% |
-| $1,200,000 | 5.89% | $171,429 | 8.51x | $660,000 | 1.49x | 4.30% |
-| $1,225,000 | 5.75% | $175,000 | 8.69x | $673,750 | 1.45x | 3.98% |
-| $1,250,000 | 5.61% | $178,571 | 8.86x | $687,500 | 1.42x | 3.67% |
-| **$1,275,000** | **5.48%** | **$182,143** | **9.04x** | **$701,250** | **1.38x** | **3.38%** |
-| $1,300,000 | 5.35% | $185,714 | 9.22x | $715,000 | 1.35x | 3.09% |
-| $1,325,000 | 5.23% | $189,286 | 9.40x | $728,750 | 1.32x | 2.82% |
+| $1,175,000 | 6.30% | $167,857 | 8.33x | $646,250 | 1.59x | 5.21% |
+| $1,200,000 | 6.15% | $171,429 | 8.51x | $660,000 | 1.55x | 4.86% |
+| $1,225,000 | 6.00% | $175,000 | 8.69x | $673,750 | 1.52x | 4.53% |
+| $1,250,000 | 5.85% | $178,571 | 8.86x | $687,500 | 1.48x | 4.21% |
+| **$1,275,000** | **5.71%** | **$182,143** | **9.04x** | **$701,250** | **1.44x** | **3.91%** |
+| $1,300,000 | 5.58% | $185,714 | 9.22x | $715,000 | 1.41x | 3.61% |
+| $1,325,000 | 5.45% | $189,286 | 9.39x | $728,750 | 1.38x | 3.33% |
 
 **Financing assumptions:** 6.00% interest, 5-year fixed, 30-year amortization, 55% max LTV, 1.25x min DSCR
 
@@ -77,8 +77,8 @@ Expense ratio: 47.9% of EGI (within range for Tier 1 pre-war RSO)
 
 ## Pricing Rationale
 
-The suggested list price of $1,275,000 positions 500 N Alexandria as one of the most compelling value-add opportunities currently available in the Koreatown submarket. At $182,143 per unit and a 5.48% current cap rate, the pricing falls within the established range of comparable closed sales while offering a materially superior pro forma return of 7.42% upon full renovation and turnover — an outcome supported by 12 building-level and 16 unit-level rent comparables.
+The suggested list price of $1,275,000 positions 500 N Alexandria as one of the most compelling value-add opportunities currently available in the Koreatown submarket. At $182,143 per unit and a 5.71% current cap rate, the pricing falls within the established range of comparable closed sales while offering a materially superior pro forma return of 7.42% upon full renovation and turnover — an outcome supported by 12 building-level and 16 unit-level rent comparables.
 
-The pricing strategy balances seller optimization with buyer accessibility. At 55% LTV, a buyer can secure conventional financing at approximately 6.00% with a comfortable 1.38x debt service coverage ratio, generating positive cash flow from day one. The $573,750 equity requirement is accessible to the 1031 exchange investor pool that comprises 61% of LAAA Team's closed transactions, ensuring a deep bench of qualified buyers.
+The pricing strategy balances seller optimization with buyer accessibility. At 55% LTV, a buyer can secure conventional financing at approximately 6.00% with a comfortable 1.44x debt service coverage ratio, generating positive cash flow from day one. The $573,750 equity requirement is accessible to the 1031 exchange investor pool that comprises 61% of LAAA Team's closed transactions, ensuring a deep bench of qualified buyers.
 
 Three independent valuation methods — cap rate, price-per-unit, and gross rent multiplier — converge tightly around the $1,250,000–$1,300,000 range, providing high confidence in the suggested price. On-market competition is limited at this price point (every comparable listing exceeds $1,595,000), giving the subject a meaningful competitive advantage that should drive strong buyer interest and a compressed marketing timeline.

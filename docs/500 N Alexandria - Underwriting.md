@@ -74,42 +74,42 @@
 
 ## 4. EXPENSE ANALYSIS (BROKER-PRESENTED)
 
-**No T-12 provided.** All expenses built from Expense Benchmarks v2.0, Tier 1 (5-8 units), broker-optimistic defaults. Property taxes parametrized to list price.
+**No T-12 provided.** All expenses built from Expense Benchmarks v2.1, Tier 1 (5-8 units), broker-optimistic defaults. Property taxes parametrized to list price.
 
 | # | Category | Benchmark Basis | Normalized | Per Unit | % EGI | Rationale |
 |---|----------|----------------|------------|----------|-------|-----------|
 | 1 | **Property Taxes** | 1.17% of price | *See matrix* | *Varies* | *Varies* | Reassessed to purchase price. Seller's current taxes: ~$21,283 on $1.707M assessed (Prop 13). Buyer will be reassessed. |
 | 2 | **Insurance** | $900/unit | $6,300 | $900 | 4.7% | Broker-optimistic $800 + $100 pre-1950 adjustment. Wood frame, no fire zone, soft-story NOT required. |
-| 3 | **Water / Sewer** | $500/bedroom | $5,500 | $786 | 4.1% | 11 bedrooms (studios=1 BR each). Always landlord-paid. No pool, minimal landscaping (small lot). |
-| 4 | **Trash** | $400/unit | $2,800 | $400 | 2.1% | LA recycling/organic bins included. Standard for 7-unit building. |
+| 3 | **Water / Sewer** | $400/bedroom | $4,400 | $629 | 3.3% | 11 bedrooms (studios=1 BR each). Broker-optimistic floor of $400-650 range. Always landlord-paid. No pool. |
+| 4 | **Trash** | $350/unit | $2,450 | $350 | 1.8% | Broker-optimistic floor of $350-500 range. LA recycling/organic bins included. |
 | 5 | **Gas** | Individually metered | $0 | $0 | 0.0% | Tenant-paid. Individual meters assumed (separate unit addresses: 500, 502, 504, 506, 508, 510). |
 | 6 | **Electric** | Individually metered | $0 | $0 | 0.0% | Tenant-paid. 6 individual panels/disconnects confirmed per LADBS electrical permits (2024). |
 | 7 | **Common Area Electric** | Flat (Tier 1) | $1,500 | $214 | 1.1% | Minimal common area. Exterior lighting, possible hallway. No elevator, no pool, no gym. |
-| 8 | **Repairs & Maintenance** | $1,300/unit | $9,100 | $1,300 | 6.8% | Base $1,200 + $150 (pre-1940 at 50% broker-optimistic adj) = $1,350. Credit -$50 for ADU/electrical CapEx (2024-2025). |
+| 8 | **Repairs & Maintenance** | $1,200/unit | $8,400 | $1,200 | 6.3% | Base $1,200 + $150 (pre-1940 at 50% broker-optimistic adj). CapEx credit -$150 for electrical upgrade + ADU (2 major systems per CapEx Credit table). |
 | 9 | **On-Site Manager** | N/A (Tier 1) | $0 | $0 | 0.0% | Not required: 7 units < 16-unit CA threshold. |
 | 10 | **Contract Services** | Flat (Tier 1) | $1,500 | $214 | 1.1% | Broker-optimistic. Small lot (4,558 SF), minimal landscaping. Periodic common area cleaning. |
 | 11 | **Administrative** | Flat (Tier 1) | $1,000 | $143 | 0.7% | Accounting, legal, bank fees, permits. Broker-optimistic for small property. |
-| 12 | **Marketing** | Flat (Tier 1) | $500 | $71 | 0.4% | 100% occupied, strong rental submarket (Koreatown/E. Hollywood), organic demand. Minimal marketing needed. |
+| 12 | **Marketing** | Market override | $0 | $0 | 0.0% | Market condition override: 100% occupied, strong Koreatown rental submarket with organic tenant demand. Per expense-benchmarks.md market condition override rule. |
 | 13 | **Management Fee** | MAX(4% EGI, $18K) | $18,000 | $2,571 | 13.4% | 4.0% of EGI = $5,359 < $18,000 minimum. Minimum binding. Note: At PF EGI, 4% = $6,350, still below $18K. Small property management economics. |
-| 14 | **Reserves** | $350/unit | $2,450 | $350 | 1.8% | Pre-1940 base = $400 (broker-optimistic). Credit -$50 for recent ADU conversion + electrical upgrade. |
+| 14 | **Reserves** | $300/unit | $2,100 | $300 | 1.6% | Pre-1940 broker-optimistic base $400. CapEx credit -$100 for electrical + ADU (2 major systems per CapEx Credit table). |
 | 15 | **LAHD / SCEP Registration** | $43.32/unit | $303 | $43 | 0.2% | RSO property. Partially passable to tenants (not reflected as income). |
 | 16 | **Other / Misc** | Flat (Tier 1) | $250 | $36 | 0.2% | Broker-optimistic catch-all. |
-| | **Total Non-Tax Operating Expenses** | | **$49,203** | **$7,029** | **36.7%** | |
+| | **Total Non-Tax Operating Expenses** | | **$46,203** | **$6,600** | **34.5%** | |
 
 ### Property Tax Schedule (Reassessed to List Price)
 
 | List Price | Annual Tax (1.17%) | Total OpEx | OpEx/Unit | OpEx % EGI |
 |-----------|-------------------|------------|-----------|------------|
-| $1,175,000 | $13,748 | $62,951 | $8,993 | 47.0% |
-| $1,200,000 | $14,040 | $63,243 | $9,035 | 47.2% |
-| $1,225,000 | $14,333 | $63,536 | $9,076 | 47.4% |
-| $1,250,000 | $14,625 | $63,828 | $9,118 | 47.6% |
-| $1,275,000 | $14,918 | $64,121 | $9,160 | 47.9% |
-| $1,300,000 | $15,210 | $64,413 | $9,202 | 48.1% |
-| $1,325,000 | $15,503 | $64,706 | $9,244 | 48.3% |
-| $1,350,000 | $15,795 | $64,998 | $9,285 | 48.5% |
-| $1,375,000 | $16,088 | $65,291 | $9,327 | 48.7% |
-| $1,400,000 | $16,380 | $65,583 | $9,369 | 48.9% |
+| $1,175,000 | $13,748 | $59,951 | $8,564 | 44.7% |
+| $1,200,000 | $14,040 | $60,243 | $8,606 | 45.0% |
+| $1,225,000 | $14,332 | $60,535 | $8,648 | 45.2% |
+| $1,250,000 | $14,625 | $60,828 | $8,690 | 45.4% |
+| $1,275,000 | $14,918 | $61,121 | $8,732 | 45.6% |
+| $1,300,000 | $15,210 | $61,413 | $8,773 | 45.8% |
+| $1,325,000 | $15,502 | $61,705 | $8,815 | 46.1% |
+| $1,350,000 | $15,795 | $61,998 | $8,857 | 46.3% |
+| $1,375,000 | $16,088 | $62,291 | $8,899 | 46.5% |
+| $1,400,000 | $16,380 | $62,583 | $8,940 | 46.7% |
 
 ---
 
@@ -120,13 +120,13 @@
 | Metric | Current (In-Place) | Pro Forma (Renovated) |
 |--------|-------------------|----------------------|
 | EGI | $133,984 | $158,745 |
-| Total OpEx | $64,121 | $64,121 |
-| **NOI** | **$69,863** | **$94,624** |
-| OpEx Ratio | 47.9% | 40.4% |
-| OpEx per Unit | $9,160 | $9,160 |
-| NOI per Unit | $9,981 | $13,518 |
+| Total OpEx | $61,121 | $61,121 |
+| **NOI** | **$72,863** | **$97,624** |
+| OpEx Ratio | 45.6% | 38.5% |
+| OpEx per Unit | $8,732 | $8,732 |
+| NOI per Unit | $10,409 | $13,946 |
 
-**Expense Ratio Check:** 47.9% current and 40.4% pro forma are within the expected range for a Tier 1 (small building, 5-8 units) pre-war RSO property. The $18K management fee minimum disproportionately impacts small properties (represents 13.4% of EGI vs. the 4% rate). Excluding the management minimum effect, the organic expense ratio would be ~38%.
+**Expense Ratio Check:** 45.6% current and 38.5% pro forma are within the expected range for a Tier 1 (small building, 5-8 units) pre-war RSO property. The $18K management fee minimum disproportionately impacts small properties (represents 13.4% of EGI vs. the 4% rate). Excluding the management minimum effect, the organic expense ratio would be ~35%.
 
 ---
 
@@ -163,7 +163,7 @@
 | Method | Calculation | Loan Amount |
 |--------|------------|-------------|
 | LTV-Constrained | $1,275,000 × 55% | $701,250 |
-| DCR-Constrained | $69,863 / (1.25 × 7.20%) | $776,256 |
+| DCR-Constrained | $72,863 / (1.25 × 7.20%) | $809,589 |
 | **Binding Constraint** | **LTV** | **$701,250** |
 
 ### Returns at $1,275,000 (Current NOI)
@@ -172,12 +172,12 @@
 |--------|-------|
 | Loan Amount | $701,250 |
 | Down Payment | $573,750 |
-| Annual Debt Service | $50,490 |
-| Cash Flow After DS | $19,373 |
-| DSCR | 1.38x |
-| Cash-on-Cash Return | 3.38% |
-| Cap Rate (Current) | 5.48% |
-| Cap Rate (Pro Forma) | 7.42% |
+| Annual Debt Service | $50,452 |
+| Cash Flow After DS | $22,411 |
+| DSCR | 1.44x |
+| Cash-on-Cash Return | 3.91% |
+| Cap Rate (Current) | 5.71% |
+| Cap Rate (Pro Forma) | 7.66% |
 | GRM | 9.04x |
 | Price per Unit | $182,143 |
 | Price per SF | $292.43 |
@@ -188,18 +188,18 @@
 
 | Price | Tax | Total OpEx | Current NOI | Cap Rate | GRM | $/Unit | Loan Amt (55%) | ADS | DSCR | Cash-on-Cash |
 |-------|-----|-----------|-------------|----------|-----|--------|----------------|-----|------|-------------|
-| $1,175,000 | $13,748 | $62,951 | $71,033 | 6.05% | 8.34x | $167,857 | $646,250 | $46,530 | 1.53x | 4.63% |
-| $1,200,000 | $14,040 | $63,243 | $70,741 | 5.90% | 8.51x | $171,429 | $660,000 | $47,520 | 1.49x | 4.30% |
-| $1,225,000 | $14,333 | $63,536 | $70,448 | 5.75% | 8.69x | $175,000 | $673,750 | $48,510 | 1.45x | 3.98% |
-| $1,250,000 | $14,625 | $63,828 | $70,156 | 5.61% | 8.87x | $178,571 | $687,500 | $49,500 | 1.42x | 3.67% |
-| **$1,275,000** | **$14,918** | **$64,121** | **$69,863** | **5.48%** | **9.04x** | **$182,143** | **$701,250** | **$50,490** | **1.38x** | **3.38%** |
-| $1,300,000 | $15,210 | $64,413 | $69,571 | 5.35% | 9.22x | $185,714 | $715,000 | $51,480 | 1.35x | 3.09% |
-| $1,325,000 | $15,503 | $64,706 | $69,278 | 5.23% | 9.40x | $189,286 | $728,750 | $52,470 | 1.32x | 2.82% |
-| $1,350,000 | $15,795 | $64,998 | $68,986 | 5.11% | 9.57x | $192,857 | $742,500 | $53,460 | 1.29x | 2.56% |
-| $1,375,000 | $16,088 | $65,291 | $68,693 | 5.00% | 9.76x | $196,429 | $756,250 | $54,450 | 1.26x | 2.31% |
-| $1,400,000 | $16,380 | $65,583 | $68,401 | 4.89% | 9.93x | $200,000 | $770,000 | $55,440 | 1.23x | 2.06% |
+| $1,175,000 | $13,748 | $59,951 | $74,033 | 6.30% | 8.33x | $167,857 | $646,250 | $46,495 | 1.59x | 5.21% |
+| $1,200,000 | $14,040 | $60,243 | $73,741 | 6.15% | 8.51x | $171,429 | $660,000 | $47,484 | 1.55x | 4.86% |
+| $1,225,000 | $14,332 | $60,535 | $73,449 | 6.00% | 8.69x | $175,000 | $673,750 | $48,474 | 1.52x | 4.53% |
+| $1,250,000 | $14,625 | $60,828 | $73,156 | 5.85% | 8.86x | $178,571 | $687,500 | $49,463 | 1.48x | 4.21% |
+| **$1,275,000** | **$14,918** | **$61,121** | **$72,863** | **5.71%** | **9.04x** | **$182,143** | **$701,250** | **$50,452** | **1.44x** | **3.91%** |
+| $1,300,000 | $15,210 | $61,413 | $72,571 | 5.58% | 9.22x | $185,714 | $715,000 | $51,441 | 1.41x | 3.61% |
+| $1,325,000 | $15,502 | $61,705 | $72,279 | 5.46% | 9.39x | $189,286 | $728,750 | $52,431 | 1.38x | 3.33% |
+| $1,350,000 | $15,795 | $61,998 | $71,986 | 5.33% | 9.57x | $192,857 | $742,500 | $53,420 | 1.35x | 3.06% |
+| $1,375,000 | $16,088 | $62,291 | $71,693 | 5.21% | 9.75x | $196,429 | $756,250 | $54,409 | 1.32x | 2.79% |
+| $1,400,000 | $16,380 | $62,583 | $71,401 | 5.10% | 9.93x | $200,000 | $770,000 | $55,398 | 1.29x | 2.54% |
 
-**Note:** At $1,400,000, DSCR drops to 1.23x -- below 1.25x lender minimum. Financing would be DCR-constrained, reducing actual LTV below 55%.
+**Note:** At $1,400,000, DSCR drops to 1.29x -- still above 1.25x lender minimum. LTV remains the binding constraint throughout this price range.
 
 ---
 
@@ -208,12 +208,12 @@
 | Assumption | Value | Rationale |
 |------------|-------|-----------|
 | Size Tier | Tier 1 (5-8 units) | 7 units |
-| Underwriting Approach | Broker-Presented | Listing-ready, broker-optimistic per underwriting_internal.md v3.0 |
+| Underwriting Approach | Broker-Presented | Listing-ready, broker-optimistic per underwriting_internal.md v3.1 |
 | Economic Vacancy | 5.0% | Higher of actual 0% or 5% minimum (standard) |
 | T-12 Available | **No** | Path B: all expenses from benchmarks |
 | Management Fee Rate | 4.0% of EGI | Broker-optimistic tier rate for Tier 1 |
 | Management Minimum | $18,000 | Industry standard; binding constraint for small properties |
-| Reserve $/Unit | $350 | Pre-1940 base $400 − $50 recent CapEx credit |
+| Reserve $/Unit | $300 | Pre-1940 base $400 - $100 CapEx credit (2 major systems) |
 | Tax Rate | 1.17% | LA County standard reassessment rate |
 | On-Site Manager | $0 | 7 units < 16-unit CA requirement |
 | Gas Metering | Individual | Separate unit addresses, typical for pre-war small building in LA |
