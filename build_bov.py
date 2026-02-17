@@ -50,12 +50,9 @@ IMG = {
     "logo": load_image_b64("LAAA_Team_White.png"),
     "glen": load_image_b64("Glen_Scher.png"),
     "filip": load_image_b64("Filip_Niculete.png"),
-    "hero": load_image_b64("hero.png"),
-    "grid1": load_image_b64("grid1.png"),
-    "grid2": load_image_b64("grid2.png"),
-    "grid3": load_image_b64("grid3.png"),
-    "grid4": load_image_b64("grid4.png"),
-    "loc_map": load_image_b64("location-map.png"),
+    "hero": load_image_b64("Street_View_Front.png"),
+    "aerial": load_image_b64("Aerial_View.png"),
+    "loc_map": load_image_b64("Location_Map_Google.png"),
     "closings_map": load_image_b64("closings-map.png"),
     "team_aida": load_image_b64("Aida_Memary_Scher.png"),
     "team_logan": load_image_b64("Logan_Ward.png"),
@@ -104,6 +101,107 @@ ADDRESSES = {
 print(f"Using cached geocode data ({len(ADDRESSES)} addresses)")
 
 # ============================================================
+# STATIC MAP GENERATOR (for PDF print)
+# ============================================================
+def generate_static_map(markers, subject_coords, width=800, height=400, zoom=14):
+    """Generate a static map PNG using OSM tiles + Pillow. Returns base64 or empty string."""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        print("WARNING: Pillow not installed. Static maps for PDF will be empty. Install with: pip install Pillow")
+        return ""
+    try:
+        import math as _math
+        def lat_lng_to_tile(lat, lng, z):
+            n = 2 ** z
+            x = int((lng + 180) / 360 * n)
+            lat_rad = _math.radians(lat)
+            y = int((1 - _math.log(_math.tan(lat_rad) + 1 / _math.cos(lat_rad)) / _math.pi) / 2 * n)
+            return x, y
+
+        def lat_lng_to_pixel(lat, lng, z, origin_x, origin_y):
+            n = 2 ** z
+            px = int((lng + 180) / 360 * n * 256 - origin_x)
+            lat_rad = _math.radians(lat)
+            py = int((1 - _math.log(_math.tan(lat_rad) + 1 / _math.cos(lat_rad)) / _math.pi) / 2 * n * 256 - origin_y)
+            return px, py
+
+        all_lats = [subject_coords[0]] + [m[1] for m in markers]
+        all_lngs = [subject_coords[1]] + [m[2] for m in markers]
+        center_lat = sum(all_lats) / len(all_lats)
+        center_lng = sum(all_lngs) / len(all_lngs)
+
+        cx, cy = lat_lng_to_tile(center_lat, center_lng, zoom)
+        origin_x = cx * 256 - width // 2
+        origin_y = cy * 256 - height // 2
+        tile_x_start = origin_x // 256
+        tile_y_start = origin_y // 256
+        tile_x_end = (origin_x + width) // 256 + 1
+        tile_y_end = (origin_y + height) // 256 + 1
+
+        canvas = Image.new("RGB", (width, height), (240, 240, 240))
+        for tx in range(tile_x_start, tile_x_end + 1):
+            for ty in range(tile_y_start, tile_y_end + 1):
+                url = f"https://tile.openstreetmap.org/{zoom}/{tx}/{ty}.png"
+                req = urllib.request.Request(url, headers={"User-Agent": "LAAA-BOV-Builder/1.0"})
+                try:
+                    tile_data = urllib.request.urlopen(req, timeout=10).read()
+                    tile_img = Image.open(io.BytesIO(tile_data))
+                    paste_x = tx * 256 - origin_x
+                    paste_y = ty * 256 - origin_y
+                    canvas.paste(tile_img, (paste_x, paste_y))
+                except Exception:
+                    pass
+
+        draw = ImageDraw.Draw(canvas)
+        r = 13
+        for num, lat, lng in markers:
+            px, py = lat_lng_to_pixel(lat, lng, zoom, origin_x, origin_y)
+            if 0 <= px < width and 0 <= py < height:
+                draw.ellipse([px - r, py - r, px + r, py + r], fill="#1B3A5C", outline="#fff", width=2)
+                label = str(num)
+                bbox = draw.textbbox((0, 0), label)
+                tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+                draw.text((px - tw // 2, py - th // 2 - 1), label, fill="#fff")
+
+        sx, sy = lat_lng_to_pixel(subject_coords[0], subject_coords[1], zoom, origin_x, origin_y)
+        if 0 <= sx < width and 0 <= sy < height:
+            draw.ellipse([sx - r, sy - r, sx + r, sy + r], fill="#C5A258", outline="#fff", width=2)
+            draw.text((sx - 2, sy - 6), "S", fill="#fff")
+
+        buf = io.BytesIO()
+        canvas.save(buf, format="PNG", optimize=True)
+        b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+        return f"data:image/png;base64,{b64}"
+    except Exception as e:
+        print(f"WARNING: Static map generation failed: {e}")
+        return ""
+
+# Generate static maps for PDF
+print("Generating static maps for PDF...")
+SALE_COMP_COORDS = [
+    (1, 34.0728, -118.2936), (2, 34.0688, -118.2933),
+    (3, 34.0765, -118.2927), (4, 34.0749, -118.2876),
+]
+ACTIVE_COMP_COORDS = [
+    (1, 34.0795, -118.3068), (2, 34.0723, -118.2981),
+    (3, 34.0721, -118.2981), (4, 34.0807, -118.2999),
+    (5, 34.0774, -118.3090), (6, 34.0786, -118.2867),
+    (7, 34.0788, -118.2959),
+]
+RENT_COMP_COORDS = [
+    (1, 34.0738, -118.2979), (2, 34.0836, -118.2980),
+    (3, 34.0681, -118.3009), (4, 34.0831, -118.2942),
+    (5, 34.0767, -118.3010), (6, 34.0645, -118.2966),
+    (7, 34.0697, -118.2978), (8, 34.0663, -118.3010),
+    (9, 34.0641, -118.2948), (10, 34.0577, -118.3011),
+    (11, 34.0642, -118.3090), (12, 34.0750, -118.2942),
+]
+STATIC_MAP_SALE = generate_static_map(SALE_COMP_COORDS, (SUBJECT_LAT, SUBJECT_LNG))
+STATIC_MAP_ACTIVE = generate_static_map(ACTIVE_COMP_COORDS, (SUBJECT_LAT, SUBJECT_LNG))
+STATIC_MAP_RENT = generate_static_map(RENT_COMP_COORDS, (SUBJECT_LAT, SUBJECT_LNG))
+
+# ============================================================
 # FINANCIAL DATA
 # ============================================================
 LIST_PRICE = 1_275_000
@@ -119,10 +217,18 @@ NON_TAX_PF_EXP = 49_203
 
 INTEREST_RATE = 0.06
 AMORTIZATION_YEARS = 30
-LTV = 0.55
-LOAN_CONSTANT = 0.072
+MAX_LTV = 0.55
+MIN_DCR = 1.25
 LOAN_TERM_YEARS = 5
 LOT_SIZE_ACRES = 0.10
+
+def calc_loan_constant(annual_rate, amort_years):
+    r = annual_rate / 12
+    n = amort_years * 12
+    monthly = (r * (1 + r)**n) / ((1 + r)**n - 1)
+    return monthly * 12
+
+LOAN_CONSTANT = calc_loan_constant(INTEREST_RATE, AMORTIZATION_YEARS)
 
 def calc_principal_reduction_yr1(loan_amount, annual_rate, amort_years):
     r = annual_rate / 12
@@ -145,8 +251,12 @@ def calc_metrics(price):
     pf_exp = NON_TAX_PF_EXP + taxes
     cur_noi = cur_egi - cur_exp
     pf_noi = pf_egi - pf_exp
-    loan_amount = price * LTV
-    down_payment = price * (1 - LTV)
+    ltv_max_loan = price * MAX_LTV
+    dcr_max_loan = cur_noi / (MIN_DCR * LOAN_CONSTANT) if LOAN_CONSTANT > 0 else ltv_max_loan
+    loan_amount = min(ltv_max_loan, dcr_max_loan)
+    actual_ltv = loan_amount / price if price > 0 else 0
+    loan_constraint = "LTV" if ltv_max_loan <= dcr_max_loan else "DCR"
+    down_payment = price - loan_amount
     debt_service = loan_amount * LOAN_CONSTANT
     net_cf_cur = cur_noi - debt_service
     net_cf_pf = pf_noi - debt_service
@@ -165,6 +275,7 @@ def calc_metrics(price):
             "cur_cap": cur_noi / price * 100, "pf_cap": pf_noi / price * 100,
             "grm": price / GSR, "pf_grm": price / PF_GSR,
             "loan_amount": loan_amount, "down_payment": down_payment,
+            "actual_ltv": actual_ltv, "loan_constraint": loan_constraint,
             "debt_service": debt_service, "net_cf_cur": net_cf_cur, "net_cf_pf": net_cf_pf,
             "coc_cur": coc_cur, "coc_pf": coc_pf, "dcr_cur": dcr_cur, "dcr_pf": dcr_pf,
             "prin_red": prin_red, "total_return_cur": total_return_cur, "total_return_pf": total_return_pf,
@@ -393,17 +504,18 @@ op_income_html = ""
 for label, val, _, note_num in income_lines:
     v_str = f"${val:,.0f}" if val >= 0 else f"(${abs(val):,.0f})"
     pu = f"${val/UNITS:,.0f}" if val >= 0 else f"(${abs(val)/UNITS:,.0f})"
+    psf = f"${val/SF:.2f}" if val >= 0 else f"(${abs(val)/SF:.2f})"
     note_ref = f'<span class="note-ref">[{note_num}]</span>' if note_num else ""
-    op_income_html += f"<tr><td>{label} {note_ref}</td><td class='num'>{v_str}</td><td class='num'>{pu}</td><td class='num'> - </td></tr>\n"
-op_income_html += f'<tr class="summary"><td><strong>Effective Gross Income</strong></td><td class="num"><strong>${CUR_EGI:,.0f}</strong></td><td class="num"><strong>${CUR_EGI/UNITS:,.0f}</strong></td><td class="num"><strong>100.0%</strong></td></tr>'
+    op_income_html += f"<tr><td>{label} {note_ref}</td><td class='num'>{v_str}</td><td class='num'>{pu}</td><td class='num'>{psf}</td><td class='num'> - </td></tr>\n"
+op_income_html += f'<tr class="summary"><td><strong>Effective Gross Income</strong></td><td class="num"><strong>${CUR_EGI:,.0f}</strong></td><td class="num"><strong>${CUR_EGI/UNITS:,.0f}</strong></td><td class="num"><strong>${CUR_EGI/SF:.2f}</strong></td><td class="num"><strong>100.0%</strong></td></tr>'
 
 op_expense_html = ""
 for label, val, note_num in expense_lines:
     pct = f"{val/CUR_EGI*100:.1f}%"
     note_ref = f'<span class="note-ref">[{note_num}]</span>' if note_num else ""
-    op_expense_html += f"<tr><td>{label} {note_ref}</td><td class='num'>${val:,.0f}</td><td class='num'>${val/UNITS:,.0f}</td><td class='num'>{pct}</td></tr>\n"
-op_expense_html += f'<tr class="summary"><td><strong>Total Expenses</strong></td><td class="num"><strong>${CUR_TOTAL_EXP:,.0f}</strong></td><td class="num"><strong>${CUR_TOTAL_EXP/UNITS:,.0f}</strong></td><td class="num"><strong>{CUR_TOTAL_EXP/CUR_EGI*100:.1f}%</strong></td></tr>'
-op_expense_html += f'\n<tr class="summary"><td><strong>Net Operating Income</strong></td><td class="num"><strong>${CUR_NOI_AT_LIST:,.0f}</strong></td><td class="num"><strong>${CUR_NOI_AT_LIST/UNITS:,.0f}</strong></td><td class="num"><strong>{CUR_NOI_AT_LIST/CUR_EGI*100:.1f}%</strong></td></tr>'
+    op_expense_html += f"<tr><td>{label} {note_ref}</td><td class='num'>${val:,.0f}</td><td class='num'>${val/UNITS:,.0f}</td><td class='num'>${val/SF:.2f}</td><td class='num'>{pct}</td></tr>\n"
+op_expense_html += f'<tr class="summary"><td><strong>Total Expenses</strong></td><td class="num"><strong>${CUR_TOTAL_EXP:,.0f}</strong></td><td class="num"><strong>${CUR_TOTAL_EXP/UNITS:,.0f}</strong></td><td class="num"><strong>${CUR_TOTAL_EXP/SF:.2f}</strong></td><td class="num"><strong>{CUR_TOTAL_EXP/CUR_EGI*100:.1f}%</strong></td></tr>'
+op_expense_html += f'\n<tr class="summary"><td><strong>Net Operating Income</strong></td><td class="num"><strong>${CUR_NOI_AT_LIST:,.0f}</strong></td><td class="num"><strong>${CUR_NOI_AT_LIST/UNITS:,.0f}</strong></td><td class="num"><strong>${CUR_NOI_AT_LIST/SF:.2f}</strong></td><td class="num"><strong>{CUR_NOI_AT_LIST/CUR_EGI*100:.1f}%</strong></td></tr>'
 
 print("Building HTML...")
 
@@ -418,6 +530,15 @@ html_parts.append(f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Broker Opinion of Value - 500 N Alexandria Ave, Los Angeles">
+<meta property="og:description" content="7-Unit Multifamily Investment - Los Angeles, California 90004 | LAAA Team - Marcus & Millichap">
+<meta property="og:image" content="{BOV_BASE_URL}/preview.png">
+<meta property="og:url" content="{BOV_BASE_URL}/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Broker Opinion of Value - 500 N Alexandria Ave, Los Angeles">
+<meta name="twitter:description" content="7-Unit Multifamily Investment - Los Angeles, California 90004 | LAAA Team - Marcus & Millichap">
+<meta name="twitter:image" content="{BOV_BASE_URL}/preview.png">
 <title>BOV - 500 N Alexandria Ave, Los Angeles | LAAA Team</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');</style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -461,7 +582,7 @@ table{{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:13px;}}t
 .photo-grid{{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px;border-radius:8px;overflow:hidden;}}.photo-grid img{{width:100%;height:180px;object-fit:cover;border-radius:4px;}}
 .condition-note{{background:#FFF8E7;border-left:4px solid #C5A258;padding:16px 20px;margin:24px 0;border-radius:0 4px 4px 0;font-size:13px;line-height:1.6;}}
 .buyer-profile{{background:#f0f4f8;border-left:4px solid #1B3A5C;padding:20px 24px;margin:24px 0;border-radius:0 4px 4px 0;}}.buyer-profile-label{{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#1B3A5C;margin-bottom:12px;}}.buyer-profile ul{{list-style:none;padding:0;margin:0;}}.buyer-profile li{{padding:8px 0;border-bottom:1px solid #dce3eb;font-size:14px;line-height:1.6;color:#333;}}.buyer-profile li:last-child{{border-bottom:none;}}.buyer-profile li strong{{color:#1B3A5C;}}.buyer-profile .bp-closing{{font-size:13px;color:#555;margin-top:12px;font-style:italic;}}
-.leaflet-map{{height:400px;border-radius:4px;border:1px solid #ddd;margin-bottom:30px;z-index:1;}}.map-fallback{{display:none;font-size:12px;color:#666;font-style:italic;margin-bottom:30px;}}
+.leaflet-map{{height:400px;border-radius:4px;border:1px solid #ddd;margin-bottom:30px;z-index:1;}}.map-fallback{{display:none;font-size:12px;color:#666;font-style:italic;margin-bottom:30px;}}.comp-map-print{{display:none;}}
 .embed-map-wrap{{position:relative;width:100%;margin-bottom:20px;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);}}.embed-map-wrap iframe{{display:block;width:100%;height:420px;border:0;}}.embed-map-caption{{font-size:12px;color:#888;text-align:center;margin-top:8px;font-style:italic;}}.embed-map-fallback{{display:none;font-size:12px;color:#666;font-style:italic;margin-bottom:30px;}}
 .adu-img-wrap{{margin-bottom:20px;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);}}.adu-img-wrap img{{width:100%;display:block;}}
 .footer{{background:#1B3A5C;color:#fff;padding:50px 40px;text-align:center;}}.footer-logo{{width:180px;margin-bottom:30px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.3));}}.footer-team{{display:flex;justify-content:center;gap:40px;margin-bottom:30px;flex-wrap:wrap;}}.footer-person{{text-align:center;flex:1;min-width:280px;}}.footer-headshot{{width:70px;height:70px;border-radius:50%;border:2px solid #C5A258;margin-bottom:10px;object-fit:cover;}}.footer-name{{font-size:16px;font-weight:600;}}.footer-title{{font-size:12px;color:#C5A258;margin-bottom:8px;}}.footer-contact{{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.8;}}.footer-contact a{{color:rgba(255,255,255,0.7);text-decoration:none;}}.footer-office{{font-size:12px;color:rgba(255,255,255,0.5);margin-top:20px;}}.footer-disclaimer{{font-size:10px;color:rgba(255,255,255,0.35);margin-top:20px;max-width:800px;margin-left:auto;margin-right:auto;line-height:1.6;}}
@@ -542,6 +663,7 @@ td{{padding:4px 8px;font-size:10px;}}
 .footer{{page-break-before:always;}}
 .tr-tagline{{font-size:15px;padding:8px 14px;margin-bottom:8px;}}
 .tr-map-print{{display:block;width:100%;height:240px;border-radius:4px;overflow:hidden;margin-bottom:8px;}}.tr-map-print img{{width:100%;height:100%;object-fit:cover;object-position:center;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+.comp-map-print{{display:block !important;height:280px;border-radius:4px;overflow:hidden;margin-bottom:10px;}}.comp-map-print img{{width:100%;height:100%;object-fit:cover;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 .tr-service-quote{{margin:10px 0;}}.tr-service-quote h3{{font-size:13px;margin-bottom:4px;}}.tr-service-quote p{{font-size:11px;line-height:1.45;}}
 .tr-mission{{padding:10px 14px;margin-bottom:12px;}}.tr-mission h3{{font-size:13px;margin-bottom:5px;}}.tr-mission p{{font-size:11px;line-height:1.4;margin-bottom:4px;}}
 .bio-grid{{gap:14px;margin:10px 0;}}.bio-headshot{{width:75px;height:75px;}}.bio-name{{font-size:13px;}}.bio-title{{font-size:9px;}}.bio-text{{font-size:10px;line-height:1.4;}}
@@ -554,7 +676,7 @@ td{{padding:4px 8px;font-size:10px;}}
 .perf-grid{{gap:10px;margin-top:10px;}}.perf-card{{padding:10px 14px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}.perf-card h4{{font-size:12px;margin-bottom:4px;}}.perf-card ul{{margin:0;padding-left:16px;}}.perf-card li{{font-size:10px;line-height:1.4;margin-bottom:2px;}}
 .platform-strip{{padding:6px 12px;margin-top:10px;gap:10px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}.platform-strip-label{{font-size:8px;}}.platform-name{{font-size:9px;}}
 .inv-split{{grid-template-columns:50% 50%;gap:14px;}}.inv-left .metrics-grid-4{{gap:6px;margin-bottom:6px;}}
-.inv-text p{{font-size:10px;line-height:1.4;margin-bottom:4px;}}.inv-logo{{width:140px;margin-top:6px;}}
+.inv-text p{{font-size:10px;line-height:1.4;margin-bottom:4px;}}.inv-logo{{display:none !important;}}
 .inv-right{{padding-top:30px;}}.inv-photo{{height:170px;}}.inv-photo img{{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 .inv-highlights{{padding:8px 12px;}}.inv-highlights h4{{font-size:10px;margin-bottom:3px;}}.inv-highlights li{{font-size:8.5px;line-height:1.25;margin-bottom:1px;}}
 .loc-grid{{display:grid;grid-template-columns:58% 42%;gap:14px;page-break-inside:avoid;}}.loc-left{{max-height:340px;overflow:hidden;}}.loc-left p{{font-size:10.5px;line-height:1.4;margin-bottom:5px;}}.loc-right{{max-height:340px;overflow:hidden;}}
@@ -859,7 +981,7 @@ html_parts.append(f"""
 </div>
 
 <div class="inv-right">
-<div class="inv-photo"><img src="{IMG['grid1']}" alt="500 N Alexandria Ave - Property Photo"></div>
+<div class="inv-photo"><img src="{IMG['hero']}" alt="500 N Alexandria Ave - Street View"></div>
 <div class="inv-highlights">
 <h4>Investment Highlights</h4>
 <ul>
@@ -1076,7 +1198,7 @@ html_parts.append(f"""
 </div>
 </div>
 
-<div class="buyer-photo"><img src="{IMG['grid2']}" alt="500 N Alexandria Ave - Property Photo"></div>
+<div class="buyer-photo"><img src="{IMG['aerial']}" alt="500 N Alexandria Ave - Aerial View"></div>
 
 </div>
 """)
@@ -1090,6 +1212,7 @@ html_parts.append(f"""
 <div class="section-divider"></div>
 
 <div id="saleMap" class="leaflet-map"></div>
+<div class="comp-map-print"><img src="{STATIC_MAP_SALE}" alt="Sale Comps Map"></div>
 <p class="map-fallback">Interactive map available at the live URL.</p>
 
 <div class="table-scroll"><table>
@@ -1123,6 +1246,7 @@ html_parts.append(f"""
 <div class="section-divider"></div>
 
 <div id="activeMap" class="leaflet-map"></div>
+<div class="comp-map-print"><img src="{STATIC_MAP_ACTIVE}" alt="On-Market Comps Map"></div>
 <p class="map-fallback">Interactive map available at the live URL.</p>
 
 <div class="table-scroll"><table>
@@ -1153,6 +1277,7 @@ html_parts.append(f"""
 <div class="section-divider"></div>
 
 <div id="rentMap" class="leaflet-map"></div>
+<div class="comp-map-print"><img src="{STATIC_MAP_RENT}" alt="Rent Comps Map"></div>
 <p class="map-fallback">Interactive map available at the live URL.</p>
 
 <h3 class="sub-heading">2-Bedroom Rent Comparables</h3>
@@ -1213,11 +1338,11 @@ html_parts.append(f"""
 <div class="os-left">
 <h3 class="sub-heading">Operating Statement</h3>
 <table>
-<thead><tr><th>Income</th><th class="num">Annual</th><th class="num">Per Unit</th><th class="num">% EGI</th></tr></thead>
+<thead><tr><th>Income</th><th class="num">Annual</th><th class="num">Per Unit</th><th class="num">$/SF</th><th class="num">% EGI</th></tr></thead>
 <tbody>{op_income_html}</tbody>
 </table>
 <table>
-<thead><tr><th>Expenses</th><th class="num">Annual</th><th class="num">Per Unit</th><th class="num">% EGI</th></tr></thead>
+<thead><tr><th>Expenses</th><th class="num">Annual</th><th class="num">Per Unit</th><th class="num">$/SF</th><th class="num">% EGI</th></tr></thead>
 <tbody>{op_expense_html}</tbody>
 </table>
 <p style="font-size:10px;color:#888;font-style:italic;margin-top:-12px;">Note: Property taxes reassessed at the $1,275,000 list price. The pricing matrix recalculates taxes at each price point.</p>
@@ -1252,7 +1377,7 @@ html_parts.append(f"""
 <thead><tr><th colspan="2" class="summary-header">OPERATING DATA</th></tr></thead>
 <tbody>
 <tr><td>Price</td><td class="num">${LIST_PRICE:,}</td></tr>
-<tr><td>Down Payment ({1-LTV:.0%})</td><td class="num">${AT_LIST['down_payment']:,.0f}</td></tr>
+<tr><td>Down Payment ({1-AT_LIST['actual_ltv']:.0%})</td><td class="num">${AT_LIST['down_payment']:,.0f}</td></tr>
 <tr><td>Number of Units</td><td class="num">{UNITS}</td></tr>
 <tr><td>Price Per Unit</td><td class="num">${AT_LIST['per_unit']:,.0f}</td></tr>
 <tr><td>Price Per SqFt</td><td class="num">${AT_LIST['per_sf']:,.2f}</td></tr>
@@ -1279,7 +1404,10 @@ html_parts.append(f"""
 <tr><td>Loan Type</td><td class="num">New</td></tr>
 <tr><td>Interest Rate</td><td class="num">{INTEREST_RATE:.2%}</td></tr>
 <tr><td>Amortization</td><td class="num">{AMORTIZATION_YEARS} Years</td></tr>
-<tr><td>Loan Constant</td><td class="num">{LOAN_CONSTANT:.2%}</td></tr>
+<tr><td>Loan Constant</td><td class="num">{LOAN_CONSTANT:.4f}</td></tr>
+<tr><td>LTV (Actual)</td><td class="num">{AT_LIST['actual_ltv']:.1%}</td></tr>
+<tr><td>DSCR (Current)</td><td class="num">{AT_LIST['dcr_cur']:.2f}x</td></tr>
+<tr><td>Constraint</td><td class="num">{AT_LIST['loan_constraint']}</td></tr>
 <tr><td>Year Due</td><td class="num">2031</td></tr>
 </tbody>
 </table>
